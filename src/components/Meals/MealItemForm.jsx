@@ -1,15 +1,20 @@
 import React from "react"
 import classes from "./MealItemForm.module.css";
+import Input from "../UI/Input/Input";
 
-const MealItemForm = () => {
+const MealItemForm = (props) => {
     return (
-        <React.Fragment>
-            <form classes={classes.form}>
-                <label>Amount</label>
-                <input type="number"></input>
+            <form className={classes.form}>
+                <Input label="Amount" input={{
+                    id: props.id,
+                    type: "number",
+                    min: "1",
+                    max: "5",
+                    step: "1",
+                    defaultValue: "1"
+                }}/>
                 <button>+ Add</button>
             </form>
-        </React.Fragment>
     );
 }
 

@@ -1,5 +1,5 @@
-import React from "react";
-import dummy from "../../assets/DummyMeals/dummy-meals.jsx";
+import React, { useContext } from "react";
+import DUMMY_MEALS from "../../assets/DummyMeals/dummy-meals.jsx";
 
 // const MealContext = React.createContext({
 
