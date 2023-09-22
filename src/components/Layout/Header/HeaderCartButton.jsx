@@ -7,7 +7,7 @@ const HeaderCartButton = () => {
     const ctx = useContext(MealContext);
 
     return (
-        <button className={classes.button}>
+        <button className={classes.button} onClick={()=>{ctx.showOverlay(true)}}>
             <CartIcon />
             Your Cart
             <p className={`${classes.badge} ${classes.bump}`}>{ctx.getCartQuantity}</p> 
