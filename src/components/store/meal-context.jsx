@@ -10,7 +10,8 @@ const MealContext = React.createContext({
     addToCart: (order) => {},
     removeFromCart: () => {},
     increaseQuantity: (order) => {},
-    decreaseQuantity: (order) => {}
+    decreaseQuantity: (order) => {},
+    clearCart: () => {}
 
 });
 //maipulate meal list, and whats in cart with this
@@ -94,6 +95,12 @@ export const MealContextProvider = (props) => {
         setCartQuantity(prevState => {return prevState-= 1})     
     }
 
+    const clearCartHandler = () => {
+        setListCart({});
+        setCartQuantity(0);
+        setTotalPrice(0.00);
+    }
+
     return <MealContext.Provider 
         value={{
             overlayState: overlayState,
@@ -104,7 +111,8 @@ export const MealContextProvider = (props) => {
             addToCart: addToCartHandler,
             removeFromCart: removeFromCartHandler,
             increaseQuantity: increaseQuantityHandler,
-            decreaseQuantity: decreaseQuantityHandler
+            decreaseQuantity: decreaseQuantityHandler,
+            clearCart: clearCartHandler
         }}
     >{props.children}</MealContext.Provider>
 }
